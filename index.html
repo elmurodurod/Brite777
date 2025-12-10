@@ -35,10 +35,11 @@
       <p class="sub">Свяжитесь с менеджером, чтобы получить актуальные вакансии и заполнить анкету для участия в программе</p>
 
       <div class="actions">
-        <a id="btnWa" class="btn wa" target="_blank" rel="noopener">
+        <!-- ВАЖНО: укажи реальные ссылки в href -->
+        <a id="btnWa" class="btn wa" href="https://wa.me/XXXXXXXXXXX" target="_blank" rel="noopener">
           <img src="assets/wa.svg" alt=""> WhatsApp
         </a>
-        <a id="btnTg" class="btn tg" target="_blank" rel="noopener">
+        <a id="btnTg" class="btn tg" href="https://t.me/XXXXXXXXXXX" target="_blank" rel="noopener">
           <img src="assets/tg.svg" alt=""> Telegram
         </a>
       </div>
@@ -55,12 +56,13 @@
 
   <script src="script.js"></script>
 
-  <!-- Lead tracking on WA/TG clicks -->
+  <!-- ОТСЛЕЖИВАНИЕ ЛИДОВ ПО КЛИКУ НА WA/TG -->
   <script>
+    // Функция отправки события Lead в пиксель
     function trackLead(channel) {
       if (typeof fbq === 'function') {
         fbq('track', 'Lead', {
-          channel: channel,                  // 'whatsapp' | 'telegram'
+          channel: channel,                  // 'whatsapp' или 'telegram'
           content_name: 'Dubai Recruitment Landing'
         });
       }
@@ -69,8 +71,18 @@
     document.addEventListener('DOMContentLoaded', function () {
       var wa = document.getElementById('btnWa');
       var tg = document.getElementById('btnTg');
-      if (wa) wa.addEventListener('click', function(){ trackLead('whatsapp'); });
-      if (tg) tg.addEventListener('click', function(){ trackLead('telegram'); });
+
+      if (wa) {
+        wa.addEventListener('click', function () {
+          trackLead('whatsapp');
+        });
+      }
+
+      if (tg) {
+        tg.addEventListener('click', function () {
+          trackLead('telegram');
+        });
+      }
     });
   </script>
 </body>
