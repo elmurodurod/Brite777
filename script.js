@@ -1,4 +1,4 @@
-const MANAGER = { name: 'Сергей Смирнов', role: 'Менеджер по подбору персонала', photo: 'assets/manager-neutral.jpg', whatsapp: '447308577581', telegram: 'Join_uk_job' };
+const MANAGER = { name: 'Артур Прилуцкий', role: 'Менеджер по подбору персонала', photo: 'assets/manager-neutral.jpg', whatsapp: '447520639435', telegram: 'brite_jobs_managr' };
 const DEFAULT_WA_TEXT = 'Здравствуйте! Хочу вакансии в Англию.';
 
 function waLink(n, t) { return 'https://wa.me/' + encodeURIComponent(n) + '?text=' + encodeURIComponent(t || DEFAULT_WA_TEXT) }
